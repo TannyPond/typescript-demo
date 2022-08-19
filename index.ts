@@ -1,17 +1,16 @@
 // Import stylesheets
-// import './style.css';
+import './style.css';
 
 let title: string = 'MyApp';
 // Write TypeScript code!
-const appDiv: HTMLElement = document.getElementById('app');
-appDiv.innerHTML = `<h1>${title}</h1>
-<hr>
-<p> Parágrafo qqr... </p>`;
+document.getElementById('app.title').innerHTML = title;
 
-console.log('Olá mundo...');
+let counter:number = 0; 
 
-for (let i = 1; i <= 10; i++) {
-  if (i % 2 == 0) {
-    console.log(i);
-  }
-}
+let intervalId = setInterval(() => {
+  counter = counter + 1;
+  let counterDiv = document.getElementById('app.counter');
+  counterDiv.innerHTML = counter.toString();
+}, 1000);
+
+
